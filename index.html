@@ -29,7 +29,7 @@
 
                 <div class="col-md-5 center-item">
                   <div class="input-group number-spinner">
-                    <button id="" class="btn btn-default">
+                    <button id="minus-button1" class="btn btn-default">
                       <i class="fas fa-minus"></i>
                     </button>
                     <input
@@ -114,16 +114,26 @@
           const increaseInput = input1Number + 1;
           const increaseMobilePrice = mobilePriceNumber + 1219;
           document.getElementById('input-value1').value = increaseInput;
-          document.getElementById(
-            'mobile-price'
-          ).innerText = increaseMobilePrice;
+          document.getElementById('mobile-price').innerText = increaseMobilePrice;
         }
       });
       //minus button event handler for mobile
+      const minusBtn1 = document.getElementById('minus-button1');
+      minusBtn1.addEventListener('click', function () {
+        const input1 = document.getElementById('input-value1').value;
+        const input1Number = parseFloat(input1);
 
-      
+        const mobilePrice = document.getElementById('mobile-price').innerText;
+        const mobilePriceNumber = parseFloat(mobilePrice);
 
+        if (input1Number > 1 && mobilePriceNumber > 1219) {
+          const decreaseInput = input1Number - 1;
+          const decreaseMobilePrice = mobilePriceNumber - 1219;
 
+          document.getElementById('input-value1').value = decreaseInput;
+          document.getElementById('mobile-price' ).innerText = decreaseMobilePrice;
+        }
+      });
     </script>
   </body>
 </html>
