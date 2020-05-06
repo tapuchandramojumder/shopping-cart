@@ -151,6 +151,23 @@
           document.getElementById('case-price').innerText = increaseCasePrice;
         }
       });
+      //minus button event handler for case
+      const minusBtn2 = document.getElementById('minus-button2');
+      minusBtn2.addEventListener('click', function () {
+        const input2 = document.getElementById('input-value2').value;
+        const input2Number = parseFloat(input2);
+
+        const casePrice = document.getElementById('case-price').innerText;
+        const casePriceNumber = parseFloat(casePrice);
+
+        if (input2Number > 1 && casePriceNumber > 59) {
+          const decreaseInput2 = input2Number - 1;
+          const decreaseCasePrice = casePriceNumber - 59;
+
+          document.getElementById('input-value2').value = decreaseInput2;
+          document.getElementById('case-price').innerText = decreaseCasePrice;
+        }
+      });
     </script>
   </body>
 </html>
