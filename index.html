@@ -84,9 +84,9 @@
                 </div>
 
                 <div class="col-md-4 status">
-                  <h5>$1,278</h5>
+                  <h5>$<span id="sub-total">1278</span></h5>
                   <h5>$0</h5>
-                  <h5>$1,278</h5>
+                  <h5>$1278</h5>
                 </div>
               </div>
             </div>
@@ -110,11 +110,17 @@
         const mobilePrice = document.getElementById('mobile-price').innerText;
         const mobilePriceNumber = parseFloat(mobilePrice);
 
+        const sub = document.getElementById('sub-total').innerText;
+        const subNumber = parseFloat(sub);
+
         if (input1Number > 0 && mobilePriceNumber >= 1219) {
           const increaseInput = input1Number + 1;
           const increaseMobilePrice = mobilePriceNumber + 1219;
+          const subTotalNumber = subNumber + 1219;
+
           document.getElementById('input-value1').value = increaseInput;
           document.getElementById('mobile-price').innerText = increaseMobilePrice;
+          document.getElementById('sub-total').innerText = subTotalNumber;
         }
       });
       //minus button event handler for mobile
@@ -126,12 +132,17 @@
         const mobilePrice = document.getElementById('mobile-price').innerText;
         const mobilePriceNumber = parseFloat(mobilePrice);
 
+        const sub = document.getElementById('sub-total').innerText;
+        const subNumber = parseFloat(sub);
+
         if (input1Number > 1 && mobilePriceNumber > 1219) {
           const decreaseInput = input1Number - 1;
           const decreaseMobilePrice = mobilePriceNumber - 1219;
+          const subTotalNumber = subNumber - 1219;
 
           document.getElementById('input-value1').value = decreaseInput;
           document.getElementById('mobile-price').innerText = decreaseMobilePrice;
+          document.getElementById('sub-total').innerText = subTotalNumber;
         }
       });
       //plus button event handler for case
@@ -143,12 +154,17 @@
         const casePrice = document.getElementById('case-price').innerText;
         const casePriceNumber = parseFloat(casePrice);
 
+        const sub = document.getElementById('sub-total').innerText;
+        const subNumber = parseFloat(sub);
+
         if (input2Number > 0 && casePriceNumber >= 59) {
           const increaseInput2 = input2Number + 1;
           const increaseCasePrice = casePriceNumber + 59;
+          const subTotalNumber = subNumber + 59;
 
           document.getElementById('input-value2').value = increaseInput2;
           document.getElementById('case-price').innerText = increaseCasePrice;
+          document.getElementById('sub-total').innerText = subTotalNumber;
         }
       });
       //minus button event handler for case
@@ -160,12 +176,17 @@
         const casePrice = document.getElementById('case-price').innerText;
         const casePriceNumber = parseFloat(casePrice);
 
+        const sub = document.getElementById('sub-total').innerText;
+        const subNumber = parseFloat(sub);
+
         if (input2Number > 1 && casePriceNumber > 59) {
           const decreaseInput2 = input2Number - 1;
           const decreaseCasePrice = casePriceNumber - 59;
+          const subTotalNumber = subNumber - 59;
 
           document.getElementById('input-value2').value = decreaseInput2;
           document.getElementById('case-price').innerText = decreaseCasePrice;
+          document.getElementById('sub-total').innerText = subTotalNumber;
         }
       });
     </script>
