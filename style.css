@@ -91,3 +91,13 @@ body {
 .price-float {
   float: right;
 }
+
+#thanks {
+  position: absolute;
+  display: none;
+  color: #f78fb3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size:26px;
+}

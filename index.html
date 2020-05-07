@@ -17,7 +17,7 @@
 
   <body>
     <section>
-      <div class="container">
+      <div id="container-section" class="container">
         <div class="cart">
           <div class="col-md-12 col-lg-10 mx-auto">
             <div class="cart-item">
@@ -91,7 +91,11 @@
               </div>
             </div>
             <div class="col-md-12 pt-4 pb-4">
-              <button type="button" class="btn btn-success check-out">
+              <button
+                id="check-out"
+                type="button"
+                class="btn btn-success check-out"
+              >
                 Check Out
               </button>
             </div>
@@ -99,6 +103,9 @@
         </div>
       </div>
     </section>
+    <div class="container">
+      <h2 id="thanks">Thanks for purchase</h2>
+    </div>
 
     <script>
       // plus button event handler for mobile
@@ -132,9 +139,7 @@
           const total = subTotalNumber - tax;
 
           document.getElementById('input-value1').value = increaseInput;
-          document.getElementById(
-            'mobile-price'
-          ).innerText = increaseMobilePrice;
+          document.getElementById('mobile-price').innerText = increaseMobilePrice;
           document.getElementById('sub-total').innerText = subTotalNumber;
           document.getElementById('tax').innerText = tax;
           document.getElementById('total').innerText = total;
@@ -166,9 +171,7 @@
           const total = subTotalNumber - tax;
 
           document.getElementById('input-value1').value = decreaseInput;
-          document.getElementById(
-            'mobile-price'
-          ).innerText = decreaseMobilePrice;
+          document.getElementById('mobile-price').innerText = decreaseMobilePrice;
           document.getElementById('sub-total').innerText = subTotalNumber;
           document.getElementById('tax').innerText = tax;
           document.getElementById('total').innerText = total;
@@ -237,6 +240,15 @@
           document.getElementById('tax').innerText = tax;
           document.getElementById('total').innerText = total;
         }
+      });
+      //check out button event handler
+      const checkBtn = document.getElementById('check-out');
+      checkBtn.addEventListener('click', function () {
+        const containerSection = document.getElementById('container-section');
+        containerSection.style.display = 'none';
+
+        const thanksId = document.getElementById('thanks');
+        thanksId.style.display = 'block';
       });
     </script>
   </body>
